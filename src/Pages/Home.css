@@ -1,0 +1,101 @@
+.container {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background: var(--background);
+  overflow: hidden;
+}
+
+#myVideo {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: 1;
+}
+
+.container-center {
+  min-width: 100vw;
+  min-height: 100vh;
+  margin: 0 auto;
+  top: 0;
+  left: 0;
+  position: absolute;
+  /* background: red; */
+}
+
+.hero-title {
+  position: absolute;
+  top: 20%;
+  width: 50%;
+  margin: 0 auto;
+  left: 30%;
+  z-index: 999;
+  color: var(--secondary);
+  font-size: 68px;
+  line-height: 1.1;
+  font-weight: 400;
+  /* background: red; */
+}
+.hero-title span {
+  color: var(--primary);
+  transition: color 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
+  font-weight: 600;
+}
+
+.hero-title span:hover {
+  color: #ffa200;
+  cursor: auto;
+}
+
+.gradient {
+  background-image: radial-gradient(
+    circle at 36% 48%,
+    #000000,
+    rgba(11, 39, 65, 0.32) 87%,
+    rgba(0, 0, 0, 0)
+  );
+  z-index: 99;
+}
+
+@media screen and (min-width: 540px) and (max-width: 1200px) {
+  .hero-title {
+    font-size: 55px;
+    top: 30%;
+  }
+
+  #myVideo {
+    display: none;
+  }
+
+  .container-center {
+    background: red;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  #myVideo {
+    display: none;
+  }
+
+  .container-center {
+    background: red;
+  }
+
+  .hero-title {
+    font-size: 38px;
+    width: 80%;
+    left: 10%;
+    top: 30%;
+  }
+}
+
+@media screen and (min-width: 300px) and (max-width: 370px) {
+  .hero-title {
+    font-size: 30px;
+    width: 70%;
+    left: 10%;
+    top: 30%;
+  }
+}
