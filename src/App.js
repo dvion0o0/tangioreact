@@ -1,21 +1,21 @@
 import React from "react";
-import { Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Navbar from "./components/Navbar";
 import Home from "./Pages/Home";
+import LatestWork from "./Pages/LatestWork";
 
 function App() {
   return (
-    <>
-      <div className="wrapper">
-        <Switch>
-          <Route exact path="/">
-            {Home}
-          </Route>
-          <Route exact path="/about">
-            About
-          </Route>
-        </Switch>
-      </div>
-    </>
+    <Router>
+      <Switch>
+        <Route exact path="/">
+          <Home />
+        </Route>
+        <Route exact path="/latestworks">
+          <LatestWork />
+        </Route>
+      </Switch>
+    </Router>
   );
 }
 

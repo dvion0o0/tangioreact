@@ -23,9 +23,9 @@ const Navbar = () => {
             <NavLink
               className="nav-link"
               activeStyle={{ color: "#ffa200" }}
-              to="/projects"
+              to="/latestworks"
             >
-              Projects
+              Latest Works
             </NavLink>
           </li>
           <li>
