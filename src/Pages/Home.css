@@ -1,6 +1,6 @@
 .container {
   position: relative;
-  width: 100%;
+  width: 100vw;
   min-height: 100vh;
   background: var(--background);
   overflow: hidden;
@@ -16,8 +16,8 @@
 }
 
 .container-center {
-  min-width: 100vw;
-  min-height: 100vh;
+  min-width: 100%;
+  min-height: 100%;
   margin: 0 auto;
   top: 0;
   left: 0;

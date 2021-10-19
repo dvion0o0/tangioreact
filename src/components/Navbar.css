@@ -33,6 +33,11 @@ nav {
 .nav-link {
   color: var(--secondary);
   font-size: 16px;
+  transition: all 0.3s ease;
+}
+.nav-link:hover {
+  color: #ffa200;
+  font-size: 20px;
 }
 
 .toggle {

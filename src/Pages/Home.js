@@ -14,7 +14,7 @@ const Home = () => {
       <div className="container-center">
         <h1 className="hero-title">
           We use <span>Communication Design</span> to help you reach
-          <span>more people</span> effectively and efficiently
+          <span style={{}}> more people</span> effectively and efficiently
         </h1>
       </div>
     </div>
