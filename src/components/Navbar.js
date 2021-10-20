@@ -2,14 +2,47 @@ import React from "react";
 import Logo from "../Assets/tangio.png";
 import { NavLink } from "react-router-dom";
 import { AiOutlineAlignRight } from "react-icons/ai";
+import { motion } from "framer-motion";
 import "./Navbar.css";
 const Navbar = () => {
+  const container = {
+    hidden: { opacity: 0, y: -100 },
+    show: {
+      opacity: 1,
+      y: 1,
+      transition: {
+        staggerChildren: 0.35,
+        // delay: 0.5,
+        duration: 1,
+      },
+    },
+  };
+
+  const item = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+    },
+  };
+
   return (
-    <nav>
+    <motion.nav variants={container}>
       <div className="nav-center">
-        <img src={Logo} className="logo" alt="logo" />
-        <ul className="nav-links">
-          <li>
+        <motion.img
+          src={Logo}
+          className="logo"
+          alt="logo"
+          variants={container}
+          initial="hidden"
+          animate="show"
+        />
+        <motion.ul
+          className="nav-links"
+          variants={container}
+          initial="hidden"
+          animate="show"
+        >
+          <motion.li variants={item}>
             <NavLink
               exact
               className="nav-link"
@@ -18,8 +51,8 @@ const Navbar = () => {
             >
               Home
             </NavLink>
-          </li>
-          <li>
+          </motion.li>
+          <motion.li variants={item}>
             <NavLink
               className="nav-link"
               activeStyle={{ color: "#ffa200" }}
@@ -27,8 +60,8 @@ const Navbar = () => {
             >
               Latest Works
             </NavLink>
-          </li>
-          <li>
+          </motion.li>
+          <motion.li variants={item}>
             <NavLink
               className="nav-link"
               activeStyle={{ color: "#ffa200" }}
@@ -36,8 +69,8 @@ const Navbar = () => {
             >
               What we do
             </NavLink>
-          </li>
-          <li>
+          </motion.li>
+          <motion.li variants={item}>
             <NavLink
               className="nav-link"
               activeStyle={{ color: "#ffa200" }}
@@ -45,8 +78,8 @@ const Navbar = () => {
             >
               About
             </NavLink>
-          </li>
-          <li>
+          </motion.li>
+          <motion.li variants={item}>
             <NavLink
               className="nav-link"
               activeStyle={{ color: "#ffa200" }}
@@ -54,11 +87,11 @@ const Navbar = () => {
             >
               Contact
             </NavLink>
-          </li>
-        </ul>
+          </motion.li>
+        </motion.ul>
         <AiOutlineAlignRight className="toggle" />
       </div>
-    </nav>
+    </motion.nav>
   );
 };
 

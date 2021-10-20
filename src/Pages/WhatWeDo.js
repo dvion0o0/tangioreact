@@ -1,6 +1,4 @@
 import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
 import "./LatestWork.css";
 import Navbar from "../components/Navbar";
 import Image1 from "../Assets/Group 31.png";
@@ -17,17 +15,11 @@ const LatestWork = () => {
   }, []);
 
   return (
-    <motion.div
-      className="container"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      transition={{ ease: "linear", duration: 0.8 }}
-    >
+    <div className="container">
       <Navbar />
       <main>
         <div className="heading">
-          <h1>Latest Work</h1>
+          <h1>What We Do</h1>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex
             similique unde excepturi odit minus perferendis sint incidunt
@@ -42,32 +34,23 @@ const LatestWork = () => {
         <div className="projects-container">
           <section>
             <img src={Image1} alt="" />
-            <h3>
-              <Link to="/latestworks/project1">Print</Link>
-            </h3>
+            <h3>Print</h3>
           </section>
           <section>
             <img src={Image2} alt="" />
-            <h3>
-              <Link to="/latestworks/project2">UI Design</Link>
-            </h3>
+            <h3>UI Design</h3>
           </section>
           <section>
             <img src={Image3} alt="" />
-            <h3>
-              {" "}
-              <Link to="/latestworks/project3">Social Media</Link>
-            </h3>
+            <h3>Social Media</h3>
           </section>
           <section>
             <img src={Image1} alt="" />
-            <h3>
-              <Link to="/latestworks/project4">Films</Link>
-            </h3>
+            <h3>Films</h3>
           </section>
         </div>
       </main>
-    </motion.div>
+    </div>
   );
 };
 

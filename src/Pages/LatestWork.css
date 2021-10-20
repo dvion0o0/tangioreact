@@ -33,31 +33,81 @@ h1 {
   margin: 0;
   padding: 0;
   color: var(--primary);
+  margin-bottom: 1rem;
+}
+
+main p {
+  color: var(--secondary);
 }
 
 .projects-container {
-  margin-top: 5rem;
+  position: relative;
+  margin-top: 3rem;
   overflow-x: hidden;
   display: flex;
   margin-left: 5rem;
   background: #2a2a2a;
   padding: 3rem;
+  background: url(../Assets/1.png);
+  background-size: 96%;
+  background-repeat: no-repeat;
+  background-color: #2a2a2a;
+  background-position: top;
 }
+
+/* .projects-container::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  top: 0;
+  left: 0%;
+  height: 100%;
+  background: url(../Assets/1.png);
+  background-size: 96%;
+  background-repeat: no-repeat;
+  z-index: 0;
+
+} */
 
 section {
   min-width: 22vw;
   min-height: 350px;
-  display: flex;
+  display: grid;
   justify-content: center;
   align-items: center;
-  font-size: 4ch;
+  /* font-size: 4ch; */
   margin-right: 2rem;
+  z-index: 99;
+  cursor: pointer;
 }
 
-section:nth-child(even) {
+section > img {
+  width: 100%;
+  height: 300px;
+  transition: all 0.5s ease-in;
+  transform: scale(0.9);
+}
+
+section img:hover {
+  transform: scale(1);
+}
+
+section h3 {
+  color: var(--secondary);
+  text-align: center;
+  font-weight: 400;
+  transition: color 0.4s linear;
+  cursor: pointer;
+}
+
+section h3:hover {
+  color: #ffa200;
+}
+
+/* section:nth-child(even) {
   background-color: teal;
   color: white;
-}
+} */
 
 @media screen and (min-width: 430px) and (max-width: 1400px) {
   section {
@@ -74,4 +124,13 @@ section:nth-child(even) {
     margin-left: 0;
     padding: 0;
   }
+}
+
+a {
+  color: var(--secondary);
+  transition: color 0.4s linear;
+}
+
+a:hover {
+  color: #ffa200;
 }
