@@ -8,18 +8,18 @@ const Home = () => {
   return (
     <motion.div
       className="container"
-      initial={{ opacity: 0, y: "-100vh", scale: 0.3 }}
-      animate={{ opacity: 1, y: 0, scale: 1 }}
-      exit={{ opacity: 0, y: "-100vh", scale: 0.3 }}
-      transition={{
-        ease: "easeOut",
-        duration: 0.5,
-        delay: 0.3,
-        staggerChildren: 0.5,
-      }}
+      // initial={{ opacity: 0, y: "-100vh", scale: 0.3 }}
+      // animate={{ opacity: 1, y: 0, scale: 1 }}
+      // exit={{ opacity: 0, y: "-100vh", scale: 0.3 }}
+      // transition={{
+      //   ease: "easeOut",
+      //   duration: 0.5,
+      //   delay: 0.3,
+      //   staggerChildren: 0.5,
+      // }}
     >
       <Navbar />
-      <video autoPlay muted loop id="myVideo" style={{ width: "100%" }}>
+      <video autoPlay muted loop id="myVideo">
         <source src={Video} type="video/mp4" />
       </video>
       <div className="gradient"></div>
@@ -27,13 +27,13 @@ const Home = () => {
       <div className="container-center">
         <motion.h1
           className="hero-title"
-          initial={{ opacity: 0, x: -100 }}
-          animate={{ opacity: 1, x: 0 }}
-          exit={{ opacity: 0, x: -100 }}
-          transition={{
-            ease: "easeOut",
-            duration: 0.3,
-          }}
+          // initial={{ opacity: 0, x: -100 }}
+          // animate={{ opacity: 1, x: 0 }}
+          // exit={{ opacity: 0, x: -100 }}
+          // transition={{
+          //   ease: "easeOut",
+          //   delay: 0.7,
+          // }}
         >
           We use <span>Communication Design</span> to help you reach
           <span> more people</span> effectively and efficiently

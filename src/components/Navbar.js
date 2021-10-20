@@ -6,14 +6,14 @@ import { motion } from "framer-motion";
 import "./Navbar.css";
 const Navbar = () => {
   const container = {
-    hidden: { opacity: 0, y: -100 },
+    hidden: { opacity: 0 },
     show: {
       opacity: 1,
-      y: 1,
       transition: {
+        ease: "easeIn",
         staggerChildren: 0.35,
-        // delay: 0.5,
-        duration: 1,
+        delay: 1,
+        duration: 0.5,
       },
     },
   };
@@ -26,23 +26,30 @@ const Navbar = () => {
   };
 
   return (
-    <motion.nav variants={container}>
-      <div className="nav-center">
+    <motion.nav>
+      <div className="nav-center" variants={container}>
         <motion.img
           src={Logo}
           className="logo"
           alt="logo"
-          variants={container}
-          initial="hidden"
-          animate="show"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ ease: "easeIn", delay: 1 }}
         />
         <motion.ul
           className="nav-links"
-          variants={container}
-          initial="hidden"
-          animate="show"
+          // variants={container}
+          // initial="hidden"
+          // animate="show"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ ease: "easeIn", staggerChildren: 0.5, duration: 1 }}
         >
-          <motion.li variants={item}>
+          <motion.li
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ ease: "easeOut" }}
+          >
             <NavLink
               exact
               className="nav-link"
@@ -52,7 +59,11 @@ const Navbar = () => {
               Home
             </NavLink>
           </motion.li>
-          <motion.li variants={item}>
+          <motion.li
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ ease: "easeOut" }}
+          >
             <NavLink
               className="nav-link"
               activeStyle={{ color: "#ffa200" }}
@@ -61,7 +72,11 @@ const Navbar = () => {
               Latest Works
             </NavLink>
           </motion.li>
-          <motion.li variants={item}>
+          <motion.li
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ ease: "easeOut" }}
+          >
             <NavLink
               className="nav-link"
               activeStyle={{ color: "#ffa200" }}
@@ -70,7 +85,11 @@ const Navbar = () => {
               What we do
             </NavLink>
           </motion.li>
-          <motion.li variants={item}>
+          <motion.li
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ ease: "easeOut" }}
+          >
             <NavLink
               className="nav-link"
               activeStyle={{ color: "#ffa200" }}
@@ -79,7 +98,11 @@ const Navbar = () => {
               About
             </NavLink>
           </motion.li>
-          <motion.li variants={item}>
+          <motion.li
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ ease: "easeOut" }}
+          >
             <NavLink
               className="nav-link"
               activeStyle={{ color: "#ffa200" }}
