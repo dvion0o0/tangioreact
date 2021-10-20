@@ -130,7 +130,7 @@ section h3:hover {
   }
   .projects-container::-webkit-scrollbar {
     display: none;
-}
+  }
 }
 
 @media screen and (min-width: 300px) and (max-width: 430px) {
@@ -148,8 +148,6 @@ section h3:hover {
 
   .projects-container::-webkit-scrollbar {
     display: none;
-}
-
   }
 
   section > img {
