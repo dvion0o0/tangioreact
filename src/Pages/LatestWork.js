@@ -16,30 +16,68 @@ const LatestWork = () => {
     });
   }, []);
 
+  const Main = {
+    hidden: {
+      opacity: 0,
+    },
+    show: {
+      opacity: 1,
+      background: "transparent",
+      transition: {
+        ease: "easeIn",
+        delay: 0.4,
+        duration: 0.8,
+        staggerChildren: 0.5,
+      },
+    },
+    exit: {
+      opacity: 0,
+      transition: {
+        ease: "easeIn",
+        when: "afterChildren",
+        duration: 0.5,
+        staggerChildren: 0.35,
+        staggerDirection: -1,
+      },
+    },
+  };
+
+  const Child = {
+    hidden: {
+      opacity: 0,
+    },
+    show: {
+      opacity: 1,
+    },
+    exit: {
+      opacity: 0,
+    },
+  };
+
   return (
     <motion.div
       className="container"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      transition={{ ease: "linear", duration: 0.8 }}
+      variants={Main}
+      initial="hidden"
+      animate="show"
+      exit="exit"
     >
       <Navbar />
       <main>
-        <div className="heading">
-          <h1>Latest Work</h1>
-          <p>
+        <motion.div className="heading">
+          <motion.h1 variants={Child}>Latest Work</motion.h1>
+          <motion.p variants={Child}>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex
             similique unde excepturi odit minus perferendis sint incidunt
             provident, quos vero.
-          </p>
-          <p>
+          </motion.p>
+          <motion.p variants={Child}>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore
             repellat ad ratione officiis dolore nostrum itaque sapiente, minus
             porro necessitatibus.
-          </p>
-        </div>
-        <div className="projects-container">
+          </motion.p>
+        </motion.div>
+        <motion.div className="projects-container" variants={Child}>
           <section>
             <img src={Image1} alt="" />
             <h3>
@@ -65,7 +103,7 @@ const LatestWork = () => {
               <Link to="/latestworks/project4">Films</Link>
             </h3>
           </section>
-        </div>
+        </motion.div>
       </main>
     </motion.div>
   );

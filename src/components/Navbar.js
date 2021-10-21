@@ -11,10 +11,17 @@ const Navbar = () => {
       opacity: 1,
       transition: {
         ease: "easeIn",
-        staggerChildren: 0.35,
-        delay: 1,
-        duration: 0.5,
+        staggerChildren: 0.5,
+        duration: 0.8,
       },
+    },
+    exit: {
+      opacity: 0,
+      ease: "easeIn",
+      when: "afterChildren",
+      duration: 1,
+      staggerChildren: 0.5,
+      staggerDirection: -1,
     },
   };
 
@@ -22,34 +29,84 @@ const Navbar = () => {
     hidden: { opacity: 0 },
     show: {
       opacity: 1,
+      transition: {
+        ease: "easeIn",
+        duration: 0.8,
+      },
+    },
+    exit: {
+      opacity: 0,
+    },
+  };
+
+  const Main = {
+    hidden: {
+      opacity: 0,
+    },
+    show: {
+      opacity: 1,
+      transition: {
+        ease: "easeIn",
+        duration: 0.8,
+        staggerChildren: 0.35,
+      },
+    },
+    exit: {
+      opacity: 0,
+      transition: {
+        ease: "easeIn",
+        when: "afterChildren",
+        duration: 0.5,
+        staggerChildren: 0.35,
+        staggerDirection: -1,
+      },
+    },
+  };
+
+  const Child = {
+    hidden: {
+      opacity: 0,
+    },
+    show: {
+      opacity: 1,
+    },
+    exit: {
+      opacity: 0,
     },
   };
 
   return (
     <motion.nav>
-      <div className="nav-center" variants={container}>
+      <div className="nav-center">
         <motion.img
           src={Logo}
           className="logo"
           alt="logo"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ ease: "easeIn", delay: 1 }}
+          initial={{ opacity: 0, y: -100 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{
+            ease: "easeIn",
+            duration: 1,
+            type: "spring",
+          }}
+          exit={{
+            opacity: 0,
+            y: -100,
+            transition: {
+              ease: "easeOut",
+              delay: 0.5,
+              duration: 0.8,
+            },
+          }}
         />
         <motion.ul
           className="nav-links"
-          // variants={container}
-          // initial="hidden"
-          // animate="show"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ ease: "easeIn", staggerChildren: 0.5, duration: 1 }}
+          variants={Main}
+          initial="hidden"
+          animate="show"
+          exit="exit"
         >
-          <motion.li
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ ease: "easeOut" }}
-          >
+          <motion.li variants={Child}>
             <NavLink
               exact
               className="nav-link"
@@ -59,11 +116,7 @@ const Navbar = () => {
               Home
             </NavLink>
           </motion.li>
-          <motion.li
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ ease: "easeOut" }}
-          >
+          <motion.li variants={Child}>
             <NavLink
               className="nav-link"
               activeStyle={{ color: "#ffa200" }}
@@ -72,11 +125,7 @@ const Navbar = () => {
               Latest Works
             </NavLink>
           </motion.li>
-          <motion.li
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ ease: "easeOut" }}
-          >
+          <motion.li variants={Child}>
             <NavLink
               className="nav-link"
               activeStyle={{ color: "#ffa200" }}
@@ -85,11 +134,7 @@ const Navbar = () => {
               What we do
             </NavLink>
           </motion.li>
-          <motion.li
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ ease: "easeOut" }}
-          >
+          <motion.li variants={Child}>
             <NavLink
               className="nav-link"
               activeStyle={{ color: "#ffa200" }}
@@ -98,11 +143,7 @@ const Navbar = () => {
               About
             </NavLink>
           </motion.li>
-          <motion.li
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ ease: "easeOut" }}
-          >
+          <motion.li variants={Child}>
             <NavLink
               className="nav-link"
               activeStyle={{ color: "#ffa200" }}
