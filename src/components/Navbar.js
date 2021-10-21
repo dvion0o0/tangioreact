@@ -78,27 +78,30 @@ const Navbar = () => {
   return (
     <motion.nav>
       <div className="nav-center">
-        <motion.img
-          src={Logo}
-          className="logo"
-          alt="logo"
-          initial={{ opacity: 0, y: -100 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{
-            ease: "easeIn",
-            duration: 1,
-            type: "spring",
-          }}
-          exit={{
-            opacity: 0,
-            y: -100,
-            transition: {
-              ease: "easeOut",
-              delay: 0.5,
-              duration: 0.8,
-            },
-          }}
-        />
+        <motion.a href="/">
+          {" "}
+          <img
+            src={Logo}
+            className="logo"
+            alt="logo"
+            initial={{ opacity: 0, y: -100 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+              ease: "easeIn",
+              duration: 1,
+              type: "spring",
+            }}
+            exit={{
+              opacity: 0,
+              y: -100,
+              transition: {
+                ease: "easeOut",
+                delay: 0.5,
+                duration: 0.8,
+              },
+            }}
+          />
+        </motion.a>
         <motion.ul
           className="nav-links"
           variants={Main}

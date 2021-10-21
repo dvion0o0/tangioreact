@@ -52,6 +52,12 @@ nav {
   color: #ffa200;
 }
 
+@media screen and (min-width: 434px) and (max-width: 1200px) {
+  .nav-links {
+    flex: 0 0 60%;
+  }
+}
+
 @media screen and (max-width: 434px) {
   .toggle {
     display: block;
